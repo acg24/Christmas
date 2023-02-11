@@ -1,11 +1,11 @@
 import java.util.Date;
 
 public class Visit {
-    private Client person;
+    private Client vClient;
     private Date vDate;
     private double cost;
     public Visit (Client c,Date d){
-        this.person=c;
+        this.vClient=c;
         this.vDate=d;
         this.cost=0;
     }
@@ -17,9 +17,24 @@ public class Visit {
            */
     public void addCost(int intro){
         double aux=0;
-        aux= intro-(intro*(person.getDiscount()/100));
+        aux= intro-(intro*(vClient.getDiscount()/100));
         cost=cost+aux;
-        System.out.println("intro:" + intro + " discount:" + person.getDiscount() );
+        System.out.println("intro:" + intro + " discount:" + vClient.getDiscount() );
     }
-
+    /*
+    =======================================================================================================================================================================
+       - Returns the information of the visit.
+       */
+    public String toString(){
+        String result=null;
+        result=("| CLIENT: " + this.vClient + " | DATE: " + this.vDate + " | COST: " + this.cost + " |");
+        return result;
+    }
+    /*
+    =======================================================================================================================================================================
+       - Geters.
+       */
+    public Client getClient(){
+        return this.vClient;
+    }
 }

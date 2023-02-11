@@ -76,4 +76,35 @@ public class Salon {
             }
         }
     }
+    /*
+   =======================================================================================================================================================================
+      - Intro a idCard(String).
+      - aux is for iterating in "result".
+      - Return a array of visits with the visit of that client.
+      */
+    public Visit[] getClientVisits(String intro){
+        Visit[] result = new Visit[20];
+        int aux = 0;
+        for (int i=0; i<visits.length;i++){
+            if (visits[i].getClient().getIdCard()==intro){
+                result[aux]=visits[i];
+                aux++;
+            }
+        }
+        return result;
+    }
+    /*
+   =======================================================================================================================================================================
+      - I don't understand what I have to do in this method.
+      */
+    public void showClients(){
+
+    }
+    public void ShowVisits(){
+        for (int i=0; i<visits.length;i++){
+            if (visits[i]!=null){
+                System.out.println(visits[i].toString());
+            }
+        }
+    }
 }
