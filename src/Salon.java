@@ -31,8 +31,8 @@ public class Salon {
         for (int i=0; i<clients.length;i++){
             if (clients[i]==null && aux<1){
                 clients[i]=intro;
-                i++;
-                System.out.println("The client " + clients[i].getName() +" is correctly added.");
+                aux++;
+                System.out.println("The client is correctly added.");
             }
         }
     }
@@ -56,22 +56,31 @@ public class Salon {
       */
     public void setMembershipClient(String introId , String introm){
         for (int i=0; i<clients.length;i++){
-            if (clients[i].getIdCard()==introId){
-                clients[i].setMembership(introm);
+            if (clients[i]!=null){
+                if (clients[i].getIdCard()==introId){
+                    clients[i].setMembership(introm);
+                    clients[i].setMember(true);
+                   /* Visit[] arra0 = getClientVisits(introId);
+                    for (int j=0; j<arra0.length;j++){
+                        arra0[j].addCost(arra0[j].getCost());
+                    }*/
+                    System.out.println("The client is now a member.");
+                }
             }
         }
     }
     /*
    =======================================================================================================================================================================
       - Intro a Visit.
+      - aux is to iterate visits.
       - Add it to visits array.
       */
     public void addVisit(Visit intro){
         int aux=0;
         for (int i=0; i<clients.length;i++){
-            if (visits[i]==null && aux<1){
+            if (visits[i]==null && aux==0){
                 visits[i]=intro;
-                i++;
+                aux++;
                 System.out.println("The visit is correctly added.");
             }
         }
@@ -93,18 +102,18 @@ public class Salon {
         }
         return result;
     }
+
     /*
    =======================================================================================================================================================================
-      - I don't understand what I have to do in this method.
+      - Show all the visits in the current salon.
       */
-    public void showClients(){
-
-    }
     public void ShowVisits(){
         for (int i=0; i<visits.length;i++){
             if (visits[i]!=null){
+                System.out.println("Visit:");
                 System.out.println(visits[i].toString());
             }
         }
     }
+
 }

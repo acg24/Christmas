@@ -50,9 +50,9 @@ public class Client {
        */
     public String toString(){
         String result=null;
-        if (this.member==true){
+        if (member==true){
             result=("| NAME: " + this.name + " | ID: " + this.idCard + " | MEMBERSHIP: " + this.membership + " |");
-        } else if (this.member==false) {
+        } else if (member==false) {
             result=("| NAME: " + this.name + " | ID: " + this.idCard + " | MEMBER: No | ");
         }
         return result;

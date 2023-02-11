@@ -15,10 +15,8 @@ public class Visit {
            - intro cost
            - change the cost of the visit.
            */
-    public void addCost(int intro){
-        double aux=0;
-        aux= intro-(intro*(vClient.getDiscount()/100));
-        cost=cost+aux;
+    public void addCost(double intro){
+        cost= intro-(intro*(vClient.getDiscount()/100));
         System.out.println("intro:" + intro + " discount:" + vClient.getDiscount() );
     }
     /*
@@ -37,4 +35,5 @@ public class Visit {
     public Client getClient(){
         return this.vClient;
     }
+    public double getCost(){ return this.cost;}
 }
